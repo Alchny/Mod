@@ -1,0 +1,16 @@
+pluginManagement {
+	repositories {
+		mavenCentral()
+		gradlePluginPortal()
+		maven {
+			name = 'Fabric'
+			url = 'https://maven.fabricmc.net/'
+		}
+		maven {
+			name = 'Sonatype'
+			url = 'https://oss.sonatype.org/content/repositories/snapshots'
+		}
+	}
+}
+
+rootProject.name = 'talismans'
