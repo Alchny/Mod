@@ -31,14 +31,14 @@ public final class ModItems {
 
 	// --- Passive talismans (effect while carried) ---
 	public static final TalismanItem HEALTH = effect("health_talisman", MobEffects.REGENERATION, 0, Rarity.RARE);
-	public static final TalismanItem SPEED = effect("speed_talisman", MobEffects.MOVEMENT_SPEED, 0, Rarity.RARE);
-	public static final TalismanItem STRENGTH = effect("strength_talisman", MobEffects.DAMAGE_BOOST, 0, Rarity.RARE);
+	public static final TalismanItem SPEED = effect("speed_talisman", MobEffects.SPEED, 0, Rarity.RARE);
+	public static final TalismanItem STRENGTH = effect("strength_talisman", MobEffects.STRENGTH, 0, Rarity.RARE);
 	public static final TalismanItem FIRE_RESISTANCE = effect("fire_resistance_talisman", MobEffects.FIRE_RESISTANCE, 0, Rarity.RARE);
 	public static final TalismanItem WATER_BREATHING = effect("water_breathing_talisman", MobEffects.WATER_BREATHING, 0, Rarity.RARE);
 	public static final TalismanItem NIGHT_VISION = effect("night_vision_talisman", MobEffects.NIGHT_VISION, 0, Rarity.RARE);
-	public static final TalismanItem LEAPING = effect("leaping_talisman", MobEffects.JUMP, 1, Rarity.RARE);
-	public static final TalismanItem HASTE = effect("haste_talisman", MobEffects.DIG_SPEED, 1, Rarity.RARE);
-	public static final TalismanItem RESISTANCE = effect("resistance_talisman", MobEffects.DAMAGE_RESISTANCE, 0, Rarity.EPIC);
+	public static final TalismanItem LEAPING = effect("leaping_talisman", MobEffects.JUMP_BOOST, 1, Rarity.RARE);
+	public static final TalismanItem HASTE = effect("haste_talisman", MobEffects.HASTE, 1, Rarity.RARE);
+	public static final TalismanItem RESISTANCE = effect("resistance_talisman", MobEffects.RESISTANCE, 0, Rarity.EPIC);
 	public static final TalismanItem LUCK = effect("luck_talisman", MobEffects.LUCK, 0, Rarity.RARE);
 
 	// --- Combat talismans (effect on the mob you hit) ---
@@ -49,7 +49,7 @@ public final class ModItems {
 	public static final TalismanItem WEAKNESS = combat("weakness_talisman", Rarity.RARE,
 			(attacker, target) -> target.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, 140, 0)));
 	public static final TalismanItem FROST = combat("frost_talisman", Rarity.RARE,
-			(attacker, target) -> target.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 120, 1)));
+			(attacker, target) -> target.addEffect(new MobEffectInstance(MobEffects.SLOWNESS, 120, 1)));
 	public static final TalismanItem FLAME = combat("flame_talisman", Rarity.RARE,
 			(attacker, target) -> target.setRemainingFireTicks(Math.max(target.getRemainingFireTicks(), 100)));
 	public static final TalismanItem LEVITATION = combat("levitation_talisman", Rarity.RARE,
@@ -59,7 +59,7 @@ public final class ModItems {
 	public static final TalismanItem BLINDING = combat("blinding_talisman", Rarity.RARE,
 			(attacker, target) -> {
 				target.addEffect(new MobEffectInstance(MobEffects.BLINDNESS, 80, 0));
-				target.addEffect(new MobEffectInstance(MobEffects.CONFUSION, 80, 0));
+				target.addEffect(new MobEffectInstance(MobEffects.NAUSEA, 80, 0));
 			});
 
 	private ModItems() {
