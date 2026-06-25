@@ -4,21 +4,20 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import net.fabricmc.api.ModInitializer;
-import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
 
-import com.kiber.talismans.item.TalismanItems;
-import com.kiber.talismans.talisman.TalismanEffectHandler;
+import com.kiber.talismans.handler.TalismanHandlers;
+import com.kiber.talismans.item.ModItemGroups;
+import com.kiber.talismans.item.ModItems;
 
 public class TalismansMod implements ModInitializer {
-	public static final Logger LOGGER = LoggerFactory.getLogger(TalismansModConstants.MOD_ID);
+	public static final Logger LOGGER = LoggerFactory.getLogger(Talismans.MOD_ID);
 
 	@Override
 	public void onInitialize() {
 		LOGGER.info("Initializing Talismans Mod for Minecraft 1.21.11");
 
-		TalismanItems.register();
-		TalismanEffectHandler.register();
-
-		ServerTickEvents.END_SERVER_TICK.register(TalismanEffectHandler::onServerTick);
+		ModItems.register();
+		ModItemGroups.register();
+		TalismanHandlers.register();
 	}
 }

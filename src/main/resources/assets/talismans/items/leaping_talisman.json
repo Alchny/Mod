@@ -1,6 +1,6 @@
 {
   "model": {
     "type": "minecraft:model",
-    "model": "talismans:item/health_talisman"
+    "model": "talismans:item/leaping_talisman"
   }
 }
